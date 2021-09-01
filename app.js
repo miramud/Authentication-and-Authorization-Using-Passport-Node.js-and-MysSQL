@@ -44,6 +44,7 @@ app.use((req, res, next)=>{
     next()
 })
 
+// INITIALIZE PUBLIC FOLDER
 app.use(express.static('public'))
 
 
