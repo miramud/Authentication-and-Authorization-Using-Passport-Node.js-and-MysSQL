@@ -1,0 +1,35 @@
+<%- include('./partials/header') %> 
+
+    <div class="container">
+        <h1 class="text-center p-3">Login Here</h1>
+        <div style="margin: 0 auto;" class="col-12 col-md-6 col-lg-5 p-5 customborder">
+
+            <% if(error != ""){ %> 
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <%= error %> 
+                        <button type="button" data-bs-dismiss="alert" aria-label="Close" class="btn-close"></button:button>
+                    </div>
+            <% } %>
+
+            <form action="/login" method="POST">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <div class="mb-3">
+                    <label for="username">Enter Your Email</label>
+                    <input type="email" class="form-control form-control-lg" name="email" id="username" autocomplete="off"
+                        placeholder="Email">
+                </div>
+                <div class="mb-3">
+                    <label for="password">Enter Your Password</label>
+                    <input type="password" class="form-control form-control-lg" name="password" id="password" autocomplete="off"
+                        placeholder="Password">
+                </div>
+                <div class="d-grid gap-3 mb-3">
+                    <input type="submit" class="btn btn-lg btn-block btn-outline-primary" value="Login">
+                    <a class="btn btn-lg btn-success" href="">Continue With Google</a>
+                </div>
+                <p>New Here ? <a class="card-link" href="/">Register Now</a> </p>
+            </form>
+        </div>
+    </div>
+
+<%- include('./partials/footer') %> 
